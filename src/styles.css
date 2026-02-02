@@ -1,0 +1,152 @@
+:root {
+    --accent: #ff004c;
+    --bg: #06060a;
+    --panel: #12121a;
+    --text: #f1f1f6;
+    --muted: #7a7a8c;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #1b1b2f, #050507);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
+#app {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* -------------------------------- Header -------------------------------- */
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* -------------------------------- Panels -------------------------------- */
+
+.panel {
+    background: var(--panel);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.panel h2 {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* -------------------------------- Color -------------------------------- */
+
+.color-panel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 0 35px var(--accent);
+}
+
+.color-panel input {
+    width: 56px;
+    height: 56px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.color-info {
+    font-size: 1rem;
+}
+
+/* -------------------------------- Buttons -------------------------------- */
+
+button {
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.power-levels,
+.modes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.power-levels button,
+.modes button {
+    background: #0b0b14;
+    border-radius: 14px;
+    padding: 14px;
+    font-size: 1.4rem;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.power-levels button.active,
+.modes button.active {
+    opacity: 1;
+    background: radial-gradient(circle, var(--accent), #000);
+    box-shadow: 0 0 18px var(--accent);
+    transform: translateY(-2px);
+}
+
+/* -------------------------------- Slider -------------------------------- */
+
+input[type="range"] {
+    width: 100%;
+}
+
+.speed-legend {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* -------------------------------- Apply -------------------------------- */
+
+#apply {
+    margin-top: 12px;
+    padding: 18px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--accent), #ff7a00);
+    box-shadow: 0 0 40px var(--accent);
+}
+
+#apply:active {
+    transform: scale(0.97);
+}
+
+/* -------------------------------- Responsive -------------------------------- */
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.1rem;
+    }
+}
